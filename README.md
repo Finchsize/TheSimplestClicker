@@ -1,1 +1,1 @@
-# TheSimplestClicker
+# The Simplest Clicker
