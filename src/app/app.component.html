@@ -1,17 +1,62 @@
-<div *ngIf="isBackendAvailible">
+<div *ngIf="!cookieValue">
+  <div style="text-align:center">
+
+      <h1>
+          Please login to {{ title }}
+      </h1>
+      <form (ngSubmit)="onSubmitLogin()">
+          <div>
+              <div>
+                  Login: <input type="text" [(ngModel)]="loginData.login" name="login" maxlength="8" size="5" />
+              </div>
+              <div>
+                  Password: <input type="password" [(ngModel)]="loginData.password" name="password" maxlength="15" size="5" />
+              </div> 
+              <div>
+                  <input type="submit" value="Login" />
+              </div>
+          </div>
+      </form>
+
+
+    <h1>
+      Registration to {{ title }}.
+    </h1>
+    <form (ngSubmit)="onSubmitRegister()">
+        <div>
+            <div>
+                Login: <input type="text" [(ngModel)]="registerData.login" name="login" maxlength="8" size="5" />
+            </div>
+            <div>
+                Password: <input type="password" [(ngModel)]="registerData.password" name="password" maxlength="15" size="5" />
+            </div> 
+            <div>
+                <input type="submit" value="Register" />
+            </div>
+        </div>
+    </form>
+  </div>
+</div>
+
+
+
+<div *ngIf="isBackendAvailible && cookieValue">
   <div style="text-align:center">
     <h1>
       Welcome to {{ title }}
     </h1>
     <h2> Your current points: </h2>
     <h1>{{ currentScore }}</h1>
+    <h2>Cookie value: {{cookieValue}}</h2>
     <button (click)="clickButton()"> Click Here </button>
   </div>
 </div>
 
 <div *ngIf="!isBackendAvailible">
   <div style="text-align:center">
-    <br ><br ><br >
+    <br>
+    <br>
+    <br>
     <h1> Server is unavailable.
       <br> Please try later.</h1>
   </div>
