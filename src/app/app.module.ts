@@ -3,14 +3,14 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { RegisterComponentComponent } from './register-component/register-component.component';
 import { CookieService } from 'ngx-cookie-service';
 import { FormsModule } from '@angular/forms';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponentComponent
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

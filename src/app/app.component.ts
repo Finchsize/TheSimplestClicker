@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { TestService } from './test-service.service';
 import { interval } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
-import { RegisterService } from './register.service';
 import { LoginService } from './login.service';
 
 @Component({
@@ -17,19 +16,12 @@ export class AppComponent implements OnInit {
   currentStaticAdd: number;
   isBackendAvailible: boolean = true;
   cookieValue: string = '';
-  registerData;
   loginData;
-  registerMessage: string = '';
 
   constructor(
     private testService: TestService,
     private cookieService: CookieService,
-    private registerService: RegisterService,
     private loginService: LoginService) {
-    this.registerData = {
-      login: "",
-      password: ""
-    };
     this.loginData = {
       login: "",
       password: ""
@@ -67,17 +59,6 @@ export class AppComponent implements OnInit {
       .toPromise()
       .then((data: Object) => {
         this.setCookie(data['value']);
-      }
-      )
-      .catch(() => { this.isBackendAvailible = false }
-      );
-  }
-
-  private onSubmitRegister(): void {
-    this.registerService.registerUser(this.registerData)
-      .toPromise()
-      .then((data: Object) => {
-        this.registerMessage = data['value'];
       }
       )
       .catch(() => { this.isBackendAvailible = false }

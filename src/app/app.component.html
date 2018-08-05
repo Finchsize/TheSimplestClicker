@@ -1,6 +1,5 @@
 <div *ngIf="!cookieValue">
   <div style="text-align:center">
-
       <h1>
           Please login to {{ title }}
       </h1>
@@ -17,25 +16,8 @@
               </div>
           </div>
       </form>
-
-
-    <h1>
-      Registration to {{ title }}.
-    </h1>
-    <form (ngSubmit)="onSubmitRegister()">
-        <div>
-            <div>
-                Login: <input type="text" [(ngModel)]="registerData.login" name="login" maxlength="8" size="5" />
-            </div>
-            <div>
-                Password: <input type="password" [(ngModel)]="registerData.password" name="password" maxlength="15" size="5" />
-            </div> 
-            <div>
-                <input type="submit" value="Register" />
-            </div>
-        </div>
-    </form>
   </div>
+  <app-register></app-register>
 </div>
 
 
