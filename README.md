@@ -1,2 +1,2 @@
 # The Simplest Clicker
-Project was made for learning puproses.
+Made for learning puproses.
